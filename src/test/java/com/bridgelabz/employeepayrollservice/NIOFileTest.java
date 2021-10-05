@@ -24,11 +24,10 @@ public class NIOFileTest {
         Path playPath = Paths.get(HOME + "/" + PLAY_WITH_NIO);
         Files.deleteIfExists(playPath);
         Assert.assertTrue(Files.notExists(playPath));
-        
 
         Files.createDirectory(playPath);
         Assert.assertTrue(Files.exists(playPath));
-        
+
         IntStream.range(1, 10).forEach(cntr -> {
             Path tempFile = Paths.get(playPath + "/temp" + cntr);
             Assert.assertTrue(Files.notExists(tempFile));
@@ -42,5 +41,6 @@ public class NIOFileTest {
         Files.newDirectoryStream(playPath).forEach(System.out::println);
         Files.newDirectoryStream(playPath, path -> path.toFile().isFile() && path.toString().startsWith("temp"))
                 .forEach(System.out::println);
-} 
+    }
 }
+
