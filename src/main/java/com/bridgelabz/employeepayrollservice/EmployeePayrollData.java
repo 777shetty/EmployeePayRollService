@@ -1,5 +1,6 @@
 package com.bridgelabz.employeepayrollservice;
 
+
 public class EmployeePayrollData {
     public int id;
     public String name;
@@ -10,9 +11,10 @@ public class EmployeePayrollData {
         this.name = name;
         this.salary = salary;
     }
+
     @Override
     public String toString() {
-        return "[Employee id=" + id + ", name=" + name + ", salary=" + salary + "]";}
-    
+        return "id=" + id + ", name=" + name + ", salary=" + salary;
+    }
 
-} 
+}
